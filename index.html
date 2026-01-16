@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Clock</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="draggable-bar"></div>
+    <div class="container">
+        <nav class="tabs">
+            <button class="tab-btn active" data-target="clock">Relógio</button>
+            <button class="tab-btn" data-target="stopwatch">Cronômetro</button>
+            <button class="tab-btn" data-target="timer">Temporizador</button>
+
+            <div class="nav-right">
+                <button class="settings-btn" id="settings-open">⚙️</button>
+                <button class="close-btn" id="close-btn">×</button>
+            </div>
+        </nav>
+
+        <div id="clock" class="content-section active">
+            <h1 id="time-display">00:00:00</h1>
+            <p id="date-display">--</p>
+        </div>
+
+        <div id="stopwatch" class="content-section">
+            <h1 id="sw-display">00:00:00.00</h1>
+            <div class="controls">
+                <button id="sw-start">Iniciar</button>
+                <button id="sw-stop">Parar</button>
+                <button id="sw-reset">Zerar</button>
+            </div>
+        </div>
+
+        <div id="timer" class="content-section">
+            <div class="timer-input">
+                <input type="number" id="timer-min" placeholder="00" min="0">
+                <span>:</span>
+                <input type="number" id="timer-sec" placeholder="00" min="0" max="59">
+            </div>
+            <h1 id="timer-display">00:00</h1>
+            <div class="controls">
+                <button id="timer-start">Iniciar</button>
+                <button id="timer-stop">Parar</button>
+                <button id="timer-reset">Zerar</button>
+            </div>
+        </div>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel" id="settings-panel">
+            <div class="settings-header">
+                <h2>Configurações</h2>
+                <button class="close-btn" id="settings-close">×</button>
+            </div>
+
+            <div class="setting-item">
+                <label>Tema</label>
+                <div class="theme-toggle">
+                    <button id="theme-dark" class="tab-btn active">Escuro</button>
+                    <button id="theme-light" class="tab-btn">Claro</button>
+                </div>
+            </div>
+
+            <div class="setting-item">
+                <label for="opacity-slider">Opacidade do Fundo</label>
+                <input type="range" id="opacity-slider" min="0.1" max="1" step="0.1" value="0.6">
+            </div>
+
+            <div class="setting-item">
+                <label for="color-picker">Cor de Destaque</label>
+                <input type="color" id="color-picker" value="#4facfe">
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
