@@ -14,9 +14,17 @@ tabs.forEach(tab => {
     });
 });
 
-// Close App
+// Window Controls
 document.getElementById('close-btn').addEventListener('click', () => {
     window.close();
+});
+
+document.getElementById('minimize-btn').addEventListener('click', () => {
+    ipcRenderer.send('minimize-window');
+});
+
+document.getElementById('maximize-btn').addEventListener('click', () => {
+    ipcRenderer.send('maximize-window');
 });
 
 // Settings Logic

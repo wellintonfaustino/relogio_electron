@@ -9,8 +9,8 @@ function createWindow() {
     frame: false,
     hasShadow: false,
     resizable: true, // Allow resizing per user request
-    minWidth: 300,
-    minHeight: 400,
+    minWidth: 500,
+    minHeight: 480,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
@@ -19,6 +19,18 @@ function createWindow() {
 
   win.loadFile('index.html');
   // win.webContents.openDevTools({ mode: 'detach' });
+
+  ipcMain.on('minimize-window', () => {
+    win.minimize();
+  });
+
+  ipcMain.on('maximize-window', () => {
+    if (win.isMaximized()) {
+      win.unmaximize();
+    } else {
+      win.maximize();
+    }
+  });
 }
 
 app.whenReady().then(() => {

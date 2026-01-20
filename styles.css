@@ -98,7 +98,9 @@ body {
 }
 
 .close-btn,
-.settings-btn {
+.settings-btn,
+.min-btn,
+.max-btn {
     background: transparent;
     border: none;
     color: rgba(var(--text-color), 0.7);
@@ -113,7 +115,9 @@ body {
 }
 
 .close-btn:hover,
-.settings-btn:hover {
+.settings-btn:hover,
+.min-btn:hover,
+.max-btn:hover {
     color: rgb(var(--text-color));
 }
 
@@ -134,7 +138,7 @@ body {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 12vw, 3.5rem);
     font-weight: 700;
     margin: 20px 0;
     letter-spacing: -2px;
@@ -144,7 +148,7 @@ h1 {
 }
 
 #sw-display {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 10vw, 2.8rem);
 }
 
 #date-display {
@@ -302,4 +306,35 @@ h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-height: 450px) {
+    .container {
+        padding: 15px;
+    }
+
+    .tabs {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    h1 {
+        margin: 10px 0;
+    }
+
+    .controls button {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+
+    .timer-input {
+        margin-bottom: 10px;
+    }
+
+    .timer-input input {
+        padding: 5px;
+        font-size: 1.2rem;
+        width: 50px;
+    }
 }
