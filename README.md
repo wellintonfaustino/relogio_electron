@@ -57,4 +57,4 @@ Este projeto está sob a licença ISC.
 
 ## 👤 Autor
 
-Desenvolvido por **Antigravity** (colaboração com Wellinton Faustino).
+Desenvolvido por Wellinton Faustino.
